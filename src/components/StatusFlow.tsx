@@ -10,6 +10,7 @@ export default function StatusFlow({ lang, onCancel }: StatusFlowProps) {
   const stext = t[lang].status;
   const ctext = t[lang].common;
   const [customerId, setCustomerId] = useState('');
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [booking, setBooking] = useState<any>(null);
 
