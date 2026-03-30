@@ -3,7 +3,11 @@ import { useState } from "react";
 import QRTicket from "./QRTicket";
 import { ArrowLeft, Search, Loader2 } from "lucide-react";
 
-export default function StatusFlow({ onCancel }: { onCancel: () => void }) {
+import { t } from "@/lib/translations";
+
+interface StatusFlowProps { lang: 'EN'|'HI'; onCancel: () => void; }
+
+export default function StatusFlow({ lang, onCancel }: StatusFlowProps) {
   const [customerId, setCustomerId] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');

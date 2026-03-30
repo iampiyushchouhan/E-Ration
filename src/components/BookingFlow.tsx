@@ -8,7 +8,9 @@ import { t } from "@/lib/translations";
 
 type Step = 'ID' | 'MEMBER' | 'SLOT' | 'KYC' | 'SUCCESS';
 
-export default function BookingFlow({ lang, onCancel }: { lang: 'EN'|'HI', onCancel: () => void }) {
+interface BookingFlowProps { lang: 'EN'|'HI'; onCancel: () => void; }
+
+export default function BookingFlow({ lang, onCancel }: BookingFlowProps) {
   const [step, setStep] = useState<Step>('ID');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
