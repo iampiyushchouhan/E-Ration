@@ -2,12 +2,15 @@
 import { useEffect, useRef, useState } from "react";
 import { ScanFace, CheckCircle2, AlertCircle } from "lucide-react";
 
+import { t } from "@/lib/translations";
+
 interface FaceScannerProps {
+  lang: 'EN'|'HI';
   expectedName: string;
   onSuccess: () => void;
 }
 
-export default function FaceScanner({ expectedName, onSuccess }: FaceScannerProps) {
+export default function FaceScanner({ lang, expectedName, onSuccess }: FaceScannerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [status, setStatus] = useState<"scanning" | "liveness" | "success" | "error">("scanning");
   const [errorMsg, setErrorMsg] = useState('');
